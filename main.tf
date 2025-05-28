@@ -72,7 +72,7 @@ module "rds" {
   password               = "krishna123" # sensitive input
   parameter_group_name   = "default.mysql8.0"
   publicly_accessible    = false
-  vpc_security_group_ids = ["sg-0dd8018e61558dc12"]
+  vpc_security_group_ids = ["sg-0c724bb523072741d" ]
   multi_az               = false
   storage_type           = "gp2"
 }
