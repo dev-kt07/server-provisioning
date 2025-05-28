@@ -8,7 +8,7 @@ on:
 
 jobs:
   terraform:
-    runs-on: self-hosted  # Runs on your self-hosted runner instead of GitHub-hosted ones
+    runs-on: self-hosted # Runs on your self-hosted runner instead of GitHub-hosted ones
    
     
     steps:
