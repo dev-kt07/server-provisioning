@@ -1,3 +1,8 @@
+provider "aws" {
+  region  = "ap-south-1" # or your desired region
+     # optional, use your AWS CLI profile name
+}
+
 module "ec2_instance" {
   source = "./modules/ec2"
 
