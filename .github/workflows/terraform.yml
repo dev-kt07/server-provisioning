@@ -1,0 +1,34 @@
+name: Terraform Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  terraform:
+    runs-on: self-hosted  # Runs on your self-hosted runner instead of GitHub-hosted ones
+    env:
+      MY_ACCESS_KEY: ${{ secrets.MY_ACCESS_KEY }}
+      MY_SECRET_KEY: ${{ secrets.MY_SECRET_KEY}}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+
+      - name: Initialize Terraform
+        run: terraform init
+
+      - name: Validate Terraform
+        run: terraform validate
+
+      - name: Plan Terraform
+        run: terraform plan -out=tfplan
+
+      - name: Apply Terraform
+        if: github.event_name == 'push'
+        run: terraform apply -auto-approve tfplan
