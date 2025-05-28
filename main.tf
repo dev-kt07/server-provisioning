@@ -47,27 +47,7 @@ module "db_subnet_group" {
   }
 }
 
-module "rds" {
-  source = "./modules/rds"
 
-  db_subnet_group_name = module.db_subnet_group.db_subnet_group_name
-
-  identifier             = "mydb-instance"
-  allocated_storage      = 20
-  engine                 = "mysql"
-  engine_version         = "8.0"
-  instance_class         = "db.t3.micro"
-  db_name                = "mydatabase"
-  username               = "admin"
-  password               = "krishna123" # sensitive input
-  parameter_group_name   = "default.mysql8.0"
-  publicly_accessible    = false
-  vpc_security_group_ids = ["sg-08b0580069e046b0a"]
-  multi_az               = false
-  storage_type           = "gp2"
-
-  
-}
 
 module "rds" {
   source = "./modules/rds"
