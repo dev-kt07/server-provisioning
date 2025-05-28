@@ -1,3 +1,3 @@
-output "subnet_group_name" {
-  value = var.name
+output "db_subnet_group_name" {
+  value = aws_db_subnet_group.this.name
 }
