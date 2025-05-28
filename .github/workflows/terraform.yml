@@ -10,8 +10,8 @@ jobs:
   terraform:
     runs-on: self-hosted  # Runs on your self-hosted runner instead of GitHub-hosted ones
     env:
-      MY_ACCESS_KEY: ${{ secrets.MY_ACCESS_KEY }}
-      MY_SECRET_KEY: ${{ secrets.MY_SECRET_KEY}}
+      AWS_ACCESS_KEY_ID: ${{ secrets.MY_ACCESS_KEY }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.MY_SECRET_KEY}}
       AWS_DEFAULT_REGION: ap-south-1
     
     steps:
