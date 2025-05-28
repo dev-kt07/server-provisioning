@@ -6,7 +6,7 @@ provider "aws" {
 module "ec2_instance" {
   source = "./modules/ec2"
 
-  ami_id            = "ami-12345678"
+  ami_id            = "ami-06b6e5225d1db5f46"
   instance_type     = "t2.micro"
   key_name          = "github-action"
   subnet_id         = "subnet-075bb40922d89bb13"
@@ -40,7 +40,7 @@ module "db_subnet_group" {
   description = "Subnet group for RDS"
 
   subnet_ids = [
-    "subnet-045f93c466b1d30b6", "subnet-06b2efb56ac4acd22"
+    "subnet-084a7ce0ee8038d06", "subnet-0d54bb5c2f7aa8d48"
       # Replace with another private subnet in a different AZ
   ]
 
@@ -72,7 +72,8 @@ module "rds" {
   password               = "krishna123" # sensitive input
   parameter_group_name   = "default.mysql8.0"
   publicly_accessible    = false
-  vpc_security_group_ids = ["sg-0c724bb523072741d" ]
+  vpc_security_group_ids = [ 	
+"sg-016c9510143b1283d" ]
   multi_az               = false
   storage_type           = "gp2"
 }

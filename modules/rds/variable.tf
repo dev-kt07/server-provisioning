@@ -51,7 +51,8 @@ variable "publicly_accessible" {
 
 variable "vpc_security_group_ids" {
   type = list(string)
-  default = [ "sg-0dd8018e61558dc12" ]
+  default = [ 
+"sg-016c9510143b1283d" ]
 }
 
 variable "db_subnet_group_name" {
