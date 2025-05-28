@@ -47,14 +47,6 @@ module "db_subnet_group" {
   }
 }
 
-
-<<<<<<< HEAD
-=======
-
-  
-}
->>>>>>> 4976078d911a38370d38350de1ce280c3235af66
-
 module "rds" {
   source = "./modules/rds"
 
